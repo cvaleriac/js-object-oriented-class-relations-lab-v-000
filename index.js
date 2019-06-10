@@ -52,9 +52,9 @@ class Trip {
         this.id = ++tripId;
         if (driver && passenger) {
             this.setDriverAndPassenger(driver, passenger)
-        } 
+        }
         store.trips.push(this);
-    } 
+    }
     setDriverAndPassenger(driver, passenger) {
         this.driverId = driver.id;
         this.passengerId = passenger.id;
