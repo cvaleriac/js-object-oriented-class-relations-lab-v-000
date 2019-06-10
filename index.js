@@ -1,6 +1,4 @@
 let store = { drivers: [], passengers: [], trips:[] };
-// initialize store with key of items and users that each point to an empty array
-
 let driverId = 0;
 let passengerId = 0;
 let tripId = 0;
