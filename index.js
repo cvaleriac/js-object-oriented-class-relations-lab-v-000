@@ -24,3 +24,25 @@ class Driver {
         );
     }
 }
+
+class Passenger {
+    constructor(name) {
+        this.name = name;
+        this.id = ++passengerId;
+        store.passengers.push(this);
+    }
+    trips() {
+        return store.trips.filter(
+            function(trip) {
+                return trip.driverId === this.id;
+            }.bind(this)
+        );
+    }
+    drivers() {
+        return store.drivers.filter(
+            function(driver) {
+                return driver.tripId === this.tripId;
+            }.bind(this)
+        );
+    }
+}
