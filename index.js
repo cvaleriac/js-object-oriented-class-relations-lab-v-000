@@ -46,3 +46,26 @@ class Passenger {
         );
     }
 }
+
+class Trip {
+    constructor(id, driverId, passengerId) {
+        this.id = id;
+        this.id = ++passengerId;
+        this.driverId = ++driverId;
+        store.trips.push(this);
+    }
+    passengers() {
+        return store.passengers.filter(
+            function(passenger) {
+                return trip.passengerId === this.id;
+            }.bind(this)
+        );
+    }
+    drivers() {
+        return store.drivers.filter(
+            function(driver) {
+                return driver.tripId === this.tripId;
+            }.bind(this)
+        );
+    }
+}
