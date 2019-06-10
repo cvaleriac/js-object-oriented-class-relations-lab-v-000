@@ -30,7 +30,7 @@ class Passenger {
         this.name = name;
         this.id = ++passengerId;
         store.passengers.push(this);
-    } 
+    }
     trips() {
         return store.trips.filter(
             function(trip) {
