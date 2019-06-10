@@ -48,23 +48,28 @@ class Passenger {
 }
 
 class Trip {
-    constructor(id, driverId, passengerId) {
-        this.id = id;
-        this.id = ++passengerId;
-        this.driverId = ++driverId;
+    constructor(driver, passenger) {
+        this.id = ++tripId;
+        if (driver && passenger) {
+            this.setDriverAndPassenger(driver, passenger)
+        } 
         store.trips.push(this);
+    } 
+    setDriverAndPassenger(driver, passenger) {
+        this.driverId = driver.id;
+        this.passengerId = passenger.id;
     }
-    passengers() {
-        return store.passengers.filter(
-            function(passenger) {
-                return trip.passengerId === this.id;
+    driver() {
+        return store.drivers.find(
+            function(driver) {
+                return driver.id === this.driverId;
             }.bind(this)
         );
     }
-    drivers() {
-        return store.drivers.filter(
-            function(driver) {
-                return driver.tripId === this.tripId;
+    passenger() {
+        return store.passengers.find(
+            function(passenger) {
+                return passenger.id === this.passengerId;
             }.bind(this)
         );
     }
