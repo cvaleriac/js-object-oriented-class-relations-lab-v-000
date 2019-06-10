@@ -8,7 +8,7 @@ class Driver {
         this.name = name;
         this.id = ++driverId;
         store.drivers.push(this);
-    } 
+    }
     trips() {
         return store.trips.filter(
             function(trip) {
@@ -30,7 +30,7 @@ class Passenger {
         this.name = name;
         this.id = ++passengerId;
         store.passengers.push(this);
-    } 
+    }
     trips() {
         return store.trips.filter(
             function(trip) {
@@ -52,9 +52,9 @@ class Trip {
         this.id = ++tripId;
         if (driver && passenger) {
             this.setDriverAndPassenger(driver, passenger)
-        } 
+        }
         store.trips.push(this);
-    } 
+    }
     setDriverAndPassenger(driver, passenger) {
         this.driverId = driver.id;
         this.passengerId = passenger.id;
